@@ -1,4 +1,4 @@
 import builtins
-dir(builtins)
-print (dir(builtins))
 
+dir(builtins)
+print(dir(builtins))
