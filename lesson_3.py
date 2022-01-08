@@ -1,4 +1,7 @@
-n1 = int(input("Введите целое число: "))
+first_number = int(input("enter a three-digit integer"))
 
-print('"Обратное" ему число:', n1)
-
+b1=first_number%10
+intermediate_number=first_number//10
+b2=intermediate_number%10
+b3=intermediate_number//10
+print(b1,b2,b3)
