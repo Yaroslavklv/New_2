@@ -1,5 +1,2 @@
-height=int(input())
-a='*'
-for i in range(height):
-    a=a.append('*')
-else: print(a)
+for k, t in enumerate(reversed(range(int(input())))):
+    print(f'{" "*t}{(k+1)*"*"}{k*"*"}')
