@@ -1,13 +1,4 @@
-a=[12,15,16,12,16,17,19]
-k=len(a)
-print(a,' ',k)
-s=50
-
-for i in a:
-    if a[2]>a[1]:
-      print(k)
-else:
-    print (a)
-#    else:
-#
-
+import random
+a=[random.randint(1,200) for _ in range(10)]
+a=[ch for ch in range(1,len(a)-1) if a[ch] > a[ch-1] and a[ch]>a[ch+1]]
+print(len(a))
