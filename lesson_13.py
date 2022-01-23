@@ -9,5 +9,5 @@ def square (a):
     perimeter=a*4
     area=a*a
     diagonal=a*(2**(1/2))
-    return  (perimeter, area, diagonal)
+    return perimeter, area, diagonal
 print(square(int(input())))
