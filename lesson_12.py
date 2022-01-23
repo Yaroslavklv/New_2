@@ -12,4 +12,4 @@ def multiplication_by_number(x):
             temp*=t
         x=x//10
     return temp
-print(function_remainder(int(input())))
+print(multiplication_by_number(int(input())))
