@@ -9,8 +9,7 @@ If another operation is entered, then the line "Unknown operation" is displayed.
 :param a: argument 1
 :param b: argument 2
 :param c: specified operation
-:return int and str
-
+:return int and str the value of the operation performed on arguments 1 and 2
 """
 a=int(input())
 b=int(input())
