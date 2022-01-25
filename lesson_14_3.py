@@ -11,5 +11,5 @@ def arithmetic (a,b,c):
  :param c: specified operation
  :return int and str the value of the operation performed on arguments 1 and 2
  '''
- alg={"+":a+b, "-":a-b, "*":a*b, "/":a/b}
- return alg.get(c,"Неизвестная операция")
+ return {"+":a+b, "-":a-b, "*":a*b, "/":a/b}.get(c,"Неизвестная операция")
+
