@@ -1,15 +1,26 @@
-def check_password(*args, **kwargs):
+from typing import List,Set,Tuple, Union
+
+def check_password(key: Union[List, Tuple, Set, str],)-> Union[int, List, Tuple, str]:
+    '''
+    :param args:
+    :param kwargs:
+    :return:
+    '''
     def wrapper():
-
-
-    return any(*args, **kwargs)
+    return get(key)
 return wrapper
 
-def authenticate():
+def authenticate(a):
+'''
+User authentication function
+:return: any Return of truth
+'''
     def wrapper():
+    i=1
+    While i<3:
+    if
+    return f'"Вы в системе!"'
 
-
-    return
 return wrapper
 
 
