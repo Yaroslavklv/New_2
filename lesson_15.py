@@ -1,11 +1,11 @@
 from typing import List,Set,Tuple, Union
 
 def check_password(key: Union[List, Tuple, Set, str],)-> Union[int, List, Tuple, str]:
-    '''
-    :param args:
-    :param kwargs:
-    :return:
-    '''
+   '''
+   The function checks for the presence of a login in the global dictionary
+   :param key: login
+   :return: true or false
+   '''''
     def wrapper():
     return get(key)
 return wrapper
