@@ -7,7 +7,7 @@ def check_password(key: Union[List, Tuple, Set, str],)-> Union[int, List, Tuple,
    :return: true or false
    '''''
     def wrapper():
-    return get(key)
+    return temp.get(key)
 return wrapper
 
 def authenticate(a):
@@ -31,4 +31,6 @@ return wrapper
 def login(username,password):
     return True
 
-
+if _name_=='_main_':
+    temp={}
+    login(1234, "Yaroslav")
