@@ -1,18 +1,20 @@
 
-def tag_p(func: object) -> object:
-    def wrapper(*args,**kwargs):
-        before='<p>'
-        after='</p>'
-        print(args,kwargs)
-        rezult=func(*args,**kwargs)
+def check_password(func: object) -> object:
+    """
 
-        return f'{before}{rezult}{after}'
+    :type func: object
+    """
+    def wrapper(username, password):
+        return any(key for key, value in temp.items() if key==username and value==password)
 
     return wrapper
 
-@tag_p
+
+@check_password
 def orig(username, password):
-    return username, password
+ return True
 
 if __name__ == '__main__':
-    orig('david', '123fd')
+    temp = {'yara': '13444!', 'dav': '2345v'}
+
+    print(orig('yaa', '13444!'))
