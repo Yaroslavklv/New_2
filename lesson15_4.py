@@ -1,4 +1,5 @@
 from typing import List,Set,Tuple, Union
+TEMP = {'y':'1', 'yara':'143!'}
 
 def decorate (func: any)->bool:
     """
@@ -22,7 +23,7 @@ def check_password(username:str, password:str)->bool:
     :param password:
     :return: true or false
     """
-    return any(key for key, value in temp.items() if key==username and value==password)
+    return TEMP.get(username) == password
 
 def authenticate(username:any, password:any)->bool:
     """
@@ -44,7 +45,6 @@ def login(username:any, password:any)->bool:
     return True
 
 if __name__ == '__main__':
-    temp = {}
     count = 3
     while count != 0:
         per=login(username=input(), password=input())
