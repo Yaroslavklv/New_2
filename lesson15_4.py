@@ -1,10 +1,12 @@
-def decorate (func):
-    '''
+from typing import List,Set,Tuple, Union
+
+def decorate (func: any)->bool:
+    """
     Decorator function. Checks for data transfer between functions the check_password and authenticate
     :param func:
     :return: Takes the value of a function parameter
-    '''
-    def wrapper(username, password):
+    """
+    def wrapper(username:any, password:any)->bool:
         if not check_password(username, password):
             return False
         if not authenticate(username, password):
@@ -13,36 +15,36 @@ def decorate (func):
 
     return wrapper
 
-def check_password(username, password):
-    '''
+def check_password(username:str, password:str)->bool:
+    """
     The function checks for the presence of a login in the global dictionary
     :param username:
     :param password:
     :return: true or false
-    '''
+    """
     return any(key for key, value in temp.items() if key==username and value==password)
 
-def authenticate(username, password):
-    '''
+def authenticate(username:any, password:any)->bool:
+    """
     The function authenticates the user
     :param username:
     :param password:
     :return: brings out the truth
-    '''
+    """
     return True
 
 @decorate
-def login(username, password):
-    '''
+def login(username:any, password:any)->bool:
+    """
     The function enters into something
     :param username:
     :param password:
     :return: brings out the truth
-    '''
+    """
     return True
 
 if __name__ == '__main__':
-    temp = {'y': '1', 'dav': '2345v'}
+    temp = {}
     count = 3
     while count != 0:
         per=login(username=input(), password=input())
