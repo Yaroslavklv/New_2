@@ -24,8 +24,7 @@ def check_password(username:str, password:str)->bool:
     :param password:
     :return: true or false
     """
-    return any(key for key, value in TEMP.items() if key==username and value==password)
-
+    return TEMP.get(username) == password
 
 def authenticate(username:any, password:any)->bool:
     """
@@ -44,7 +43,6 @@ def login(username:any, password:any)->bool:
     :param password:
     :return: brings out the truth
     """
-
     return True
 
 if __name__ == '__main__':
@@ -55,15 +53,15 @@ if __name__ == '__main__':
  prov_parser.add_argument("-p", "--password", action="store")
  args = prov_parser.parse_args()
  print(args)
- if (args.username == None) and (args.password == None):
+ if args.username is None and args.password is None:
      print("Введите значение username и password")
- elif args.username == None:
+ elif args.username is None:
      print("Введите значение username")
- elif args.password == None:
+ elif args.password is None:
      print("Введите значение password")
  count = 3
  while count != 0:
-     per = login(args.username, args.password)
+     per = login(args.username or input(), args.password or input())
      if per == True:
          print(f'Вы в системе!')
          break
