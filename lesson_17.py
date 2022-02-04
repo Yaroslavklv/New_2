@@ -48,20 +48,28 @@ def login(username:any, password:any)->bool:
 import datetime
 
 def func_time(date)->bool:
+    """
+    The function checks the period of time for which the user entered the wrong login or password
+    :param date: Date and time of the last incorrect login or password entry
+    :return: outputs a boolean value
+    """
     return date > datetime.datetime.now() - datetime.timedelta(minutes=5)
 
-def save_time_login():
+def save_last_time_login():
+    """
+    A function that saves the date and time of the last unsuccessful login and password entry
+    :return: data and time
+    """
     return datetime.datetime.now().strftime('%d-%m-%Y %H:%M')
-
 
 
 if __name__ == '__main__':
 
- d = datetime.datetime(day=4, month=2, year=2022, hour=19, minute=38, second=10)
- i = (d + datetime.timedelta(minutes=5)) - datetime.datetime.now()
+ saving_login_error = datetime.datetime(day=4, month=2, year=2022, hour=20, minute=18, second=10)
+ minut = (saving_login_error + datetime.timedelta(minutes=5)) - datetime.datetime.now()
 
- while func_time(d) == True:
-     print(f'Вы заблокированы! Следующая попытка через {i} мин.')
+ while func_time(saving_login_error) == True:
+     print(f'Вы заблокированы! Следующая попытка через {minut} мин.')
      break
  else:
      import argparse
@@ -90,3 +98,4 @@ if __name__ == '__main__':
              print(args)
      else:
          print(f'Попытки истекли')
+         saving_login_error=save_last_time_login()
