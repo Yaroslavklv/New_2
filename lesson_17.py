@@ -60,12 +60,12 @@ def save_last_time_login():
     A function that saves the date and time of the last unsuccessful login and password entry
     :return: data and time
     """
-    return datetime.datetime.now().strftime('%d-%m-%Y %H:%M')
+    return datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 
 
 if __name__ == '__main__':
 
- saving_login_error = datetime.datetime(day=4, month=2, year=2022, hour=20, minute=18, second=10)
+ saving_login_error = datetime.datetime(day=4, month=2, year=2022, hour=20, minute=25, second=10)
  minut = (saving_login_error + datetime.timedelta(minutes=5)) - datetime.datetime.now()
 
  while func_time(saving_login_error) == True:
