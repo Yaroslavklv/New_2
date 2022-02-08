@@ -1,4 +1,4 @@
-from typing import List,Set,Tuple, Union
+import argparse, datetime
 
 TEMP = {'y':'1', 'yara':'143!'}
 
@@ -10,7 +10,7 @@ def decorate(func: any)->bool:
     """
     def wrapper(username:any, password:any)->bool:
         if not check_password(username, password):
-            return False
+            return False1
         if not authenticate(username, password):
             return False
         return func(username, password)
@@ -45,7 +45,7 @@ def login(username:any, password:any)->bool:
     """
     return True
 
-import datetime
+
 
 def func_time(date)->bool:
     """
@@ -72,7 +72,7 @@ if __name__ == '__main__':
      print(f'Вы заблокированы! Следующая попытка через {minut} мин.')
      break
  else:
-     import argparse
+
      prov_parser = argparse.ArgumentParser()
      prov_parser.add_argument("-u", "--username", action="store")
      prov_parser.add_argument("-p", "--password", action="store")
