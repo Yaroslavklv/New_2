@@ -27,7 +27,6 @@ def check_password(username:str, password:str)->bool:
     :param password:
     :return: true or false
     """
-
     try:
         return TEMP.get(username) == password
     except KeyError:
@@ -91,7 +90,7 @@ if __name__ == '__main__':
          print("Введите значение password")
      count = 3
      while count != 0:
-             per = login(args.username, args.password)
+             per = login(args.username or input(), args.password or input())
              if per == True:
                  print(f'Вы в системе!')
                  break
