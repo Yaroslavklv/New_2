@@ -19,7 +19,7 @@ def decorate(func: any) -> bool:
         try:
             check_password(username, password)
         except UserDoesNotExist:
-            return True
+            return False
         if not authenticate(username, password):
             return False
         return func(username, password)
