@@ -5,7 +5,7 @@ class UserDoesNotExist(Exception):
     ...
 
 
-TEMP = {'y': '1', 'yara': '143!'}
+temp = {'y': '1', 'yara': '143!'}
 
 
 def decorate(func: any) -> bool:
@@ -20,6 +20,9 @@ def decorate(func: any) -> bool:
             check_password(username, password)
         except UserDoesNotExist:
             return False
+        else:
+            if not check_password(username, password):
+                return False
         if not authenticate(username, password):
             return False
         return func(username, password)
@@ -35,9 +38,10 @@ def check_password(username: str, password: str) -> bool:
     :return: true or false
     """
     try:
-        return TEMP[username] == password
+        return temp[username] == password
     except KeyError:
         raise UserDoesNotExist
+
 
 
 def authenticate(username: any, password: any) -> bool:
